@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <title>Bầu cử</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    
+    <div class="col-lg-4" style="width: 50%; float:left; background-color: #C0C0C0">
+      <h1 class="text-center">GIỚI THIỆU ỨNG CỬ VIÊN</h1>
+          
+          <br/>
+      <form onSubmit="App.infoCandidates(); return false;" class=" text-center">
+        <div class="form-group" class=" text-center">
+          <label for="candidatesSelect"></label>
+          <select class="fw-normal" id="infoSelect" style="width: 50%; font-size: larger;" >
+          </select>
+        </div>
+        <div>
+          <tbody id="info">
+          </tbody>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Hiển thị</button>
+      </form>
+      <div id="loadinfo">
+        <!-- <svg class="bd-placeholder-img rounded-circle text-center" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+        <h2 class="fw-normal text-center" id="info"></h2>
+        <pre style="background-color: #C0C0C0" id="infotomtat"></pre>
+        
+      </div>
+
+    </div>
+
+    <div style="width: 45%; float:right">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">SỐ PHIẾU HIỆN TẠI</h1>
+         
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            
+            <table  class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">STT</th>
+                  <th scope="col">Họ và Tên</th>
+                  <th scope="col">Giới tính</th>
+                  <th scope="col">Tuổi</th>
+                  <!-- <th scope="col">Tom tat</th> -->
+                  <th scope="col">Tổng số phiếu</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">
+              </tbody>
+            </table>
+            <hr/>
+            <form onSubmit="App.castVote(); return false;" class=" text-center" >
+              <h1 class="text-center">TIẾN HÀNH BẦU CỬ</h1>
+              <div class="form-group" class="text-center" >
+                <label for="candidatesSelect" >Chọn ứng cử viên:</label>
+                <div id="candidatesSelect"></div>
+                <input type="text" id="chuoi" value="" hidden></input>
+                
+                <!-- <p  id="chuoi">abc</p> -->
+                <!-- <select   id="candidatesSelect" style="width: 60% ;font-size: larger;" class="fw-normal " >
+                </select> -->
+              </div>
+              <button class="btn btn-primary" id ="btn">Vote</button>
+              
+              <hr />
+              <script language="javascript">
+                document.getElementById('btn').onclick = function()
+                {
+                    // Khai báo tham số
+                    var checkbox = document.getElementsByName('candidate');
+                     var result = "";
+                     
+                    // Lặp qua từng checkbox để lấy giá trị
+                    for (var i = 0; i < checkbox.length; i++){
+                        if (checkbox[i].checked === true){
+                            result +=  checkbox[i].value;
+                        }
+                    }
+                    element = document.getElementById('chuoi').value=result;
+                    sovote=result.length - 1;
+                    if (result.length==0){
+                      alert("Bạn chưa chọn ứng cử viên")
+                    }
+                    if(result.length==checkbox.length){
+                      element = document.getElementById('chuoi').value="";
+                      alert('Bạn chỉ được chọn từ 1 đến '+sovote+' ứng cử viên (không được chọn tất cả)');
+                    }
+                };
+            </script>
+            </form>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

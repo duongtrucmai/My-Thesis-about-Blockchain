@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="light-style customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    </head>
+
+  <body>
+    <div class="container-xxl">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <div class="card">
+            <div class="card-body">
+              <div class="app-brand justify-content-center">
+                <a href="index.html" class="app-brand-link gap-2">
+                  <span class="app-brand-text demo text-body fw-bolder">B Vote</span>
+                </a>
+              </div>
+              <h4 class="mb-2">Kết quả thông tin</h4>
+
+              <% if (data) { %>
+                <ul>
+                  <li>Full Name: <%= data.fullname %></li>
+                  <li>CCCD: <%= data.cccd %></li>
+                  <li>MSSV: <%= data.mssv %></li>
+                  <li>Truong: <%= data.truong %></li>
+                  <li>Nganh: <%= data.nganh %></li>
+                  <li>Thanh Tich: <%= data.thanhtich %></li>
+                  <li>Mail: <%= data.mail %></li>
+                </ul>
+
+                <div class="d-flex justify-content-end mt-4">
+                  <button class="btn btn-primary me-2" id="editButton">Sửa</button>
+                  <button class="btn btn-danger" id="deleteButton">Xóa</button>
+                  <button class="btn btn-success" id="saveButton" disabled>Lưu</button>
+                </div>
+              <% } else { %>
+                <p><%= message %></p>
+              <% } %>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+
+    <script>
+      const editButton = document.getElementById('editButton');
+      const deleteButton = document.getElementById('deleteButton');
+      const saveButton = document.getElementById('saveButton');
+
+      // Add event listeners for buttons (implementation details omitted for brevity)
+      editButton.addEventListener('click', handleEdit);
+      deleteButton.addEventListener('click', handleDelete);
+      saveButton.addEventListener('click', handleSave);
+
+      // Implement functions for button click events (handleEdit, handleDelete, handleSave)
+      // These functions would likely interact with your backend to perform edit, delete, or save operations
+      // and update the UI accordingly.
+    </script>
+
+    </body>
+</html>

@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const router = express.Router();
-const accountmodel = require('../data.js')
+const {accountData} = require('../data.js')
 
 router.get('/xacthuc', function(req, res, next){
   res.render('xacthuc.ejs')
@@ -10,7 +10,7 @@ router.post('/xacthuc', async (req, res, next) => {
   const { mssv, truong } = req.body; // Destructure request body for clarity
 
   try {
-    const foundAccount = await accountmodel.findOne({ mssv, truong }); // Find by both mssv and truong
+    const foundAccount = await accountData.findOne({ mssv, truong }); // Find by both mssv and truong
 
     if (foundAccount) {
       

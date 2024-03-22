@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const router = express.Router();
-const accountmodel = require('../data2.js')
+const {account} = require('../data.js')
 
 router.get('/login', function(req, res, next){
   res.render('login.ejs')
@@ -9,7 +9,7 @@ router.get('/login', function(req, res, next){
 router.post('/login', (req, res, next) => {
   var admin = req.body.admin
   var password = req.body.password
-  accountmodel.findOne({
+  account.findOne({
     admin: admin,
     password: password
   }).then(data=>{

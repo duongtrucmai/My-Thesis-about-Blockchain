@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/styledashboard.css">
+  <link href="image/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+  
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li style="background-color: #333"><a href="index.html" class="logo">
+          <span class="nav-item">BlockChain</spam>
+          </a></li><br><br>
+        
+        <li  style="background-color: #06223a;"><a href="dashboard.html">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">DashBoard</span>
+        </a></li>
+
+
+        <li><a href="/add">
+          <i class="fas fa-info-circle"></i>
+          <span class="nav-item">Thêm thông tin</span>
+        </a></li>
+
+        <li><a href="#">
+          <i class="fas fa-edit"></i>
+          <span class="nav-item">Chỉnh sửa thông tin đã thêm</span>
+        </a></li>
+
+       </ul>
+    </nav>
+
+
+        <div class="main-top">
+           
+            <i class="fas fa-sign-out-alt">Đăng xuất</i>
+        </div>
+ 
+
+   </div>
+
+</body>
+</html>
+<script>
+const express = require('express')
+const router = express.Router();
+
+
+router.get('/dashboard', function(req, res, next){    
+    if(req.session.loggedinUser){
+        res.render('dashboard.ejs',{email:req.session.mail})
+    }else{
+        res.redirect('/xacthuc');
+    }
+    
+})
+
+
+module.exports = router; </script>
+

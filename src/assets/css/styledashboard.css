@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #4682B4;
+}
+
+.container{
+    display: flex;
+}
+
+nav{
+    position: relative;
+    top:0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    background: #333;
+    width: 280px;
+    overflow: hidden;
+    box-shadow: 0 0px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+a {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: table;
+    width: 280px;
+    padding: 10px;
+}
+
+nav .fas{
+    position: relative;
+    width: 70px;
+    height: 50px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: -20px;
+}
+
+a:hover{
+    background: #06223a;
+}
+
+.logo a:hover {
+    background: #333; 
+  }
+
+
+
+.main-top i{
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3rem;
+   
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    
+    cursor: pointer;
+}
+
+.main-top i:hover{
+    background: #06223a;
+}

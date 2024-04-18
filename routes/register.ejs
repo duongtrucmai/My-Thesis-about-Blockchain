@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+    <head>
+  
+        <meta charset="UTF-8">
+        <title>Admin</title>
+        <link rel="stylesheet" href="../assets/css/styleadduser.css">
+        <link href="image/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        
+      </head>
+      <body>
+        <div class="container">
+          <nav>
+            <ul>
+              <li style="background-color: #333"><a href="dashboard.html" class="logo">
+                  <i class="fas fa-home"></i>
+                <span class="nav-item">DashBoard</spam>
+                </a></li><br><br>
+
+
+                <li style="background-color: #06223a;"><a href="/register">
+                    <i class="fas fa-solid fa-user"></i>
+                    <span class="nav-item">Tạo tài khoản</span>
+                  </a></li>
+              
+           
+      
+              <li><a href="/add">
+                <i class="fas fa-info-circle"></i>
+                <span class="nav-item">Thêm thông tin</span>
+              </a></li>
+      
+              <li><a href="/del">
+                <i class="fas fa-trash"></i>
+                <span class="nav-item">Xóa thông tin</span>
+              </a></li>
+      
+              <li><a href="/index.html">
+                  <i class="fas fa-arrow-circle-left"></i>
+                  <span class="nav-item">Trở về Trang chủ</span>
+                </a></li>
+      
+             </ul>
+          </nav>
+
+            <div class="main-top">
+                <i class="fas fa-sign-out-alt">Đăng xuất</i>
+                <form id="formAuthentication" action="/register" method="POST">
+
+                    <div class="main_div">
+
+                        <div class="title">Nhập thông tin để tạo tài khoản </div> <br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">User</p>
+                        <div class="input_box">
+                            <input type="text" id="user" placeholder="Nhập User muốn tạo" name="user" required
+                                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Tên trường</p>
+                        <div class="input_box">
+                            <input type="text" id="truong" placeholder="Nhập tên trường" name="truong" required
+                                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Hiệu trưởng</p>
+                        <div class="input_box">
+                            <input type="text" id="ht" placeholder="Nhập tên hiệu trưởng của trường" name="ht" required
+                                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Password</p>
+                        <div class="input_box">
+                            <input type="text" id="pw" placeholder="Tạo password cho user" name="pw" required
+                                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+
+
+
+                        <div class="clearfix">
+                            <button type="submit" class="addbtn">Tạo tài khoản</button>
+                        </div> <br>
+
+
+                       
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="../assets/vendor/libs/popper/popper.js"></script>
+        <script src="../assets/vendor/js/bootstrap.js"></script>
+        <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+        <script src="../assets/vendor/js/menu.js"></script>
+        <!-- endbuild -->
+
+        <!-- Vendors JS -->
+
+        <!-- Main JS -->
+        <script src="../assets/js/main.js"></script>
+
+        <!-- Page JS -->
+
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </body><br><br><br>
+
+</html>

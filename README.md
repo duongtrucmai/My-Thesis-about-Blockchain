@@ -6,7 +6,7 @@
 
 ![Tệp_000](https://github.com/duongtrucmai/My-Thesis-about-Blockchain/assets/95559754/74056f25-c52e-4240-b321-85ec9f071be1)
 
-Thanks for watching!!!!
-May, 2024
+Thanks for watching!!!!/n
+May, 2024/n
 Duong Truc Mai
 

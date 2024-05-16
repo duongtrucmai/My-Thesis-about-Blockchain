@@ -1,23 +1,22 @@
 const express = require('express');
 const router = express.Router();
-// ... other imports
+const { accountData } = require('../data.js'); // Assuming data access logic
 
-router.get('/dsach', (req, res, next) => {
-  res.render('dsach.ejs', { data: [] }); // Render with an empty array by default
-});
+// Assuming 'account' function retrieves currently logged-in account details
 
-router.post('/dsach', async (req, res) => {
-  const { mssv, truong } = req.body;
-
+router.get('/dsach', async (req, res, next) => {
   try {
-    const name = await getNameByMssv(mssv); // Assuming getNameByMssv returns a Promise
-    submittedData.push({ mssv, name });
 
-    res.render('dsach.ejs', { data: submittedData });
+    const filteredData = await accountData.find({ truong: req.query.truong });
+
+
+    res.render('dsach.ejs', { dataList: filteredData }); // Pass filtered data
   } catch (err) {
-    console.error(err); // Log the error for debugging
-    res.status(500).json({ message: 'Tạo tài khoản thất bại' });
+    console.error(err);
+    next(err);
   }
 });
+
+// ... other routes (unchanged)
 
 module.exports = router;

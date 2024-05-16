@@ -1,22 +1,43 @@
-// Using Node.js `require()`
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/admin');
+
+// Connect to MongoDB only once
+mongoose.connect('mongodb://127.0.0.1/admin');
 
 const Schema = mongoose.Schema;
 
-const dataschema = new Schema({
+// Define separate schemas for clarity and potential future separation
+const dataSchema = new Schema({
     fullname: String,
-    cccd: String,
-    mssv: String,
+    bang: String,
     truong: String,
+    mssv: String,
+    ngaysinh: String,
     nganh: String,
-    thanhtich: String,
-    mail: String,
-  
-},{
+    nam: String,
+    loai: String,
+    hinhthuc: String,
+    sohieu: String,
+    ht: String,
+    pw: String,
+    password: String,
+}, {
     collection: 'data'
 });
 
-const accountData1 = mongoose.model('data', dataschema)
+const accountSchema = new Schema({
+    username: String,
+    pw: String,
+    ht: String,
+    truong:String,
+    password: String,
 
-module.exports = accountData1
+}, {
+    collection: 'account'
+});
+
+// Create separate models for well-defined boundaries
+const accountData = mongoose.model('data', dataSchema);
+const account = mongoose.model('account', accountSchema);
+
+// Export both models for usage in other parts of your application
+module.exports = { accountData, account };

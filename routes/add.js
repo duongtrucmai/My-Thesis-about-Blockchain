@@ -1,32 +1,61 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const router = express.Router();
-const accountmodel = require('../data.js')
+const { accountData, account } = require('../data.js'); // Assuming data access logic
 
-router.get('/add', function(req, res, next){
-  res.render('add.ejs')
-})
-router.post('/add', (req, res, next) => {
-  var fullname = req.body.fullname
-  var cccd = req.body.cccd
-  var mssv = req.body.mssv
-  var truong = req.body.truong
-  var nganh = req.body.nganh
-  var  thanhtich= req.body.thanhtich
-  var mail = req.body.mail
-    accountmodel.create({
-        fullname: fullname,
-        cccd: cccd,
-        mssv: mssv,
-        truong: truong,
-        nganh: nganh,
-        thanhtich: thanhtich,
-        mail: mail
-    }).then(data=>{    
-      res.render('index.html'); 
-    }).catch(err=>{
-      res.status(500).json('Tao ho so that bai')
-    })
-  })
+router.get('/add', (req, res, next) => {
+  res.render('add.ejs'); // Render the add form
+});
 
+router.post('/add', async (req, res, next) => {
+  const {
+    truong,
+    mssv,
+    bang,
+    fullname,
+    ngaysinh,
+    nganh,
+    nam,
+    loai,
+    hinhthuc,
+    sohieu,
+    ht,
+    pw,
+    password
+  } = req.body;
+
+  try {
+    // Check for duplicate mssv and truong:
+    const existingAccount = await accountData.findOne({ mssv, truong });
+    if (existingAccount) {
+      return res.status(400).json({ message: 'Thông tin đã có, vui lòng kiểm tra lại' });
+    }
+    
+    const createdAccount = await accountData.create({
+      truong,
+      mssv,
+      bang,
+      fullname,
+      ngaysinh,
+      nganh,
+      nam,
+      loai,
+      hinhthuc,
+      sohieu,
+      ht,
+      pw,
+      password,
+    });
+
+    // Redirect to dsach.ejs to display updated list (optional)
+   
+      // Redirect to dsach.ejs to display updated list (optional)
+      res.redirect(`/dsach?truong=${createdAccount.truong}`);    
+
+  } catch (err) {
+    console.error(err); // Log the error for debugging
+    res.status(500).json({ message: 'Tạo tài khoản thất bại' });
+  }
+});
+                
 module.exports = router;

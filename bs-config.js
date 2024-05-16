@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 
-const accountData1 = require('./data.js')
-const accountData2 = require('./data2.js')
+const { accountData, account } = require('./data.js'); // Destructure exported models
+const bcrypt = require('bcrypt'); // Install bcrypt if needed
+
 app.use(express.static('src'))
 var session = require('express-session');
 // doc du lieu tu body gui
@@ -26,20 +27,28 @@ app.use(session({
 const add = require('./routes/add')
 const xacthuc = require('./routes/xacthuc')
 const logout = require('./routes/logout')
-const dashboard = require('./routes/dashboard')
-const trangchu = require('./routes/trangchu')
 const login = require('./routes/login')
-const register = require('./routes/register')
-const find = require('./routes/find')
+const dsach = require('./routes/dsach')
+const tracuu = require('./routes/tracuu')
+const ketqua = require('./routes/ketqua')
+const adduser = require('./routes/adduser')
+const xoa = require('./routes/xoa')
+const xoauser = require('./routes/xoauser')
+const dsachuser = require('./routes/dsachuser')
+const sua = require('./routes/sua')
 
 app.use(xacthuc);
 app.use(logout);
-app.use(dashboard);
-app.use(trangchu);
 app.use(login);
-app.use(register);
 app.use(add);
-app.use(find);
+app.use(dsach);
+app.use(dsachuser);
+app.use(tracuu);
+app.use(ketqua);
+app.use(adduser);
+app.use(xoa);
+app.use(sua);
+app.use(xoauser);
 
 app.get('/test', function (req, res) {
   res.sendFile( __dirname + "/src/index.html")
@@ -48,29 +57,17 @@ app.get('/test', function (req, res) {
   res.sendFile( __dirname + "/src/index2.html")
 })
 //user
-app.get('/vote', function (req, res, next) {
+
+
+//admin
+app.get('/add', function (req, res, next) {
   if(req.session.loggedinUser){
-    res.render('vote.ejs')
+    res.render('add.ejs')
   }else{
     res.redirect('/xacthuc');
   }
 })
 
-//admin
-app.get('/AddCandidate', function (req, res, next) {
-  if(req.session.loggedinUser){
-    res.render('AddCandidate.ejs')
-  }else{
-    res.redirect('/xacthuc');
-  }
-})
-app.get('/info', function (req, res, next) {
-  if(req.session.loggedinUser){
-    res.render('info.ejs')
-  }else{
-    res.redirect('/xacthuc');
-  }
-})
 app.get('/ketqua', function (req, res, next) {
   if(req.session.loggedinUser){
     res.render('ketqua.ejs')
@@ -79,9 +76,7 @@ app.get('/ketqua', function (req, res, next) {
   }
   
 })
-app.get('/layout', function (req, res) {
-  res.sendFile( __dirname  + "/src/layout.html" );
-})
+
 module.exports = {
   "server": {
     "baseDir": ["./src", "./build/contracts"],

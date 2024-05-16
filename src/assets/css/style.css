@@ -1,5 +1,8 @@
 :root{
-  background-color: #4682B4;
+  body {
+    background: linear-gradient(to bottom, #3b404a 15%, #262b32 100%);
+  }
+
 }
 
 *{
@@ -11,6 +14,19 @@
   text-transform: capitalize;
   transition: .2s linear;
 } 
+
+#myVideo {
+  position: absolute;
+
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  z-index: -1; /* Đặt video sau các phần tử khác */
+}
+
+
+
 
 /*html {
   font-size: 62.5%;
@@ -39,7 +55,7 @@
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: #333;
+  background: #11585a;
   color: #fff;
   padding: .9rem 3rem;
   cursor: pointer;
@@ -50,25 +66,10 @@
 
 .button:hover{
   background:#06223a ;
+  padding: 1.2rem 3.5rem;
 }
 
-.button1{
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 1rem;
-  border-radius: 5rem;
-  background: #333;
-  color: #fff;
-  padding:  .9rem 3rem;
-  cursor: pointer;
-  font-size: 20px;
-  position: fixed;
-  top: 3px; right: 230px;
-}
 
-.button1:hover{
-  background:#06223a ;
-}
 
 section{
   padding: 2rem 9%;
@@ -89,12 +90,12 @@ section{
 
 .home .content h1{
   font-size: 5rem;
-  color: #333;
+  color: #6deff3;
 }
 
 .home .content h2{
   font-size: 1.5rem;
-  color: #333;
+  color: #6deff3;
   
   
 }
@@ -104,7 +105,7 @@ section{
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: #333;
+  background: #11585a;
   color: #fff;
   padding: .9rem 3.5rem;
   cursor: pointer;
@@ -113,6 +114,7 @@ section{
 
 .btn:hover{
   background:#06223a ;
+  padding: 1.2rem 3.5rem;
 }
 
 .footer .box-container{
@@ -150,7 +152,7 @@ section{
   margin-top: 1.5rem;
   padding-top: 2.5rem;
   font-size: 1rem;
-  color: #333;
+  color: #99968e;
   border-top: .1rem solid rgba(0,0,0,1);
 }
 

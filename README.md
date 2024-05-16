@@ -5,7 +5,7 @@
 ![1](https://github.com/duongtrucmai/My-Thesis-about-Blockchain/assets/95559754/ea451fce-1ac5-4bfe-901e-8eb8f995c7c3)
 
 
-![2](https://github.com/duongtrucmai/My-Thesis-about-Blockchain/assets/95559754/1a620ac9-7cd4-420a-bb2d-4e6fccbd28c1)
+![2](https://github.com/duongtrucmai/My-Thesis-about-Blockchain/assets/95559754/ba61f776-880a-46b9-8ea1-62bb77d0c542)
 
 
 ![3](https://github.com/duongtrucmai/My-Thesis-about-Blockchain/assets/95559754/b4fb75a6-fb67-4404-9ec5-e141331cb78d)

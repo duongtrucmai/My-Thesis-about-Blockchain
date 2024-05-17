@@ -2,7 +2,7 @@
 - **My Thesis about Blockchain**: Building an authentication system of university degree using Blockchain technology with Ethereum platform. 
 - **Luận văn tốt nghiệp Đại Học** ngành _Mạng máy tính và truyền thông dữ liệu_ (IT - Information Technology): Xây dựng hệ thống chứng thực bằng cấp của trường đại học sử dụng công nghệ Blockchain với nền tảng Ethereum. 
 
-Video: https://youtu.be/rstOhyTwqUI?si=pk-ZA-Y2XIeWV4uo 
+Video: https://youtu.be/aKcA98NBY8k?si=v9xBnOfzPR4Sckd_ 
   
 ![1](https://github.com/duongtrucmai/My-Thesis-about-Blockchain/assets/95559754/ea451fce-1ac5-4bfe-901e-8eb8f995c7c3)
 
